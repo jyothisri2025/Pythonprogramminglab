@@ -1,0 +1,42 @@
+def credit(T_BAL, amount):
+    T_BAL += amount
+    return T_BAL
+
+def debit(T_BAL, amount):
+    if amount > T_BAL:
+        print("Insufficient balance!")
+        return T_BAL
+    T_BAL -= amount
+    return T_BAL
+
+# Initialize total balance
+total = 0
+
+while True:
+    print("\nChoose an option:")
+    print("1. Credit Amount")
+    print("2. Debit Amount")
+    print("3. Check Balance")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        amount = int(input("Enter the amount to credit: "))
+        total = credit(total, amount)
+        print("Amount credited successfully. New Balance:", total)
+
+    elif choice == '2':
+        amount = int(input("Enter the amount to debit: "))
+        total = debit(total, amount)
+        print("Transaction completed. New Balance:", total)
+
+    elif choice == '3':
+        print("Current Balance:", total)
+
+    elif choice == '4':
+        print("Exiting... Have a great day!")
+        break
+
+    else:
+        print("Invalid choice! Please try again.")
