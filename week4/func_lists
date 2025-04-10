@@ -1,0 +1,64 @@
+def length(ln,n):
+    for i in range(n):
+        temp=int(input())
+        ln.append(temp)
+    return ln
+
+def sum_of_even_indices(ln,n):
+       sum=0
+       for i in range(n):
+            if i % 2 == 0:
+                 sum += ln[i]
+       return sum
+def sum_of_odd_indices(ln,n):
+     sum=0
+     for i in range(n):
+         if i%2!=0 :
+          sum += ln[i]   
+     return sum
+
+def product(ln,n):
+      even=sum_of_even_indices(ln,n)
+      odd=sum_of_odd_indices(ln,n)
+      prod=even*odd
+      return prod
+
+n1=int(input("Enter the range of L1: "))
+n2=int(input("Enter the range of L2: "))
+n3=int(input("Enter the range of L3: "))
+l1=[]
+l2=[]
+l3=[]
+
+x=length(l1,n1)
+print(x,"\n")
+y=length(l2,n2)
+print(y,"\n")
+z=length(l3,n3)
+print(z,"\n")
+
+print("Sum of even indices : ")
+s1=sum_of_even_indices(l1,n1)
+print("Sum of even indices in list 1 : ", s1)
+s2=sum_of_even_indices(l2,n2)
+print("Sum of even indices in list 2 : ", s2)
+s3=sum_of_even_indices(l3,n3)
+print("Sum of even indices in list 3 : ", s3)
+print("\n")
+
+print("Sum of odd indices of lists : ")
+s4=sum_of_odd_indices(l1,n1)
+print("Sum of odd indices in list 1 : ", s4)
+s5=sum_of_odd_indices(l2,n2)
+print("Sum of odd indices in list 2 : ", s5)
+s6=sum_of_odd_indices(l3,n3)
+print("Sum of odd indices in list 3 : ", s6)
+print("\n")
+
+print("Product of indices i lists :")
+p1=product(l1,n1)
+print("product of the indices : ",p1)
+p2=product(l2,n2)
+print("product of indices : ",p2)
+p3=product(l3,n3)
+print("product of the indices: ",p3)
